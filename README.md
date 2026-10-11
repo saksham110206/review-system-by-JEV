@@ -1,4 +1,4 @@
-# 📱 Smartphone Review Analyzer
+#  Smartphone Review Analyzer
 
 > Turn messy, free-text smartphone reviews into clean **Flipkart-style per-topic star ratings** — powered by **Jev** via the TypeSafe SDK.
 
@@ -10,7 +10,7 @@ A single overall star rating hides the details. Someone may love the camera but 
 
 ---
 
-## ✨ Features
+##  Features
 
 - **7 topics analyzed automatically:** Camera, Battery, Display, Design, Performance, Build Quality, Value for Money
 - **Mention detection:** a topic is rated only if the review actually discusses it, so no made-up ratings
@@ -20,7 +20,7 @@ A single overall star rating hides the details. Someone may love the camera but 
 
 ---
 
-## 🧠 How it works
+##  How it works
 
 For every review, Jev is asked **14 questions**: two for each of the 7 topics.
 
@@ -33,12 +33,12 @@ A topic's rating is **kept only if the mention probability is ≥ `0.5`**. Kept 
 
 ```mermaid
 flowchart LR
-    A[📄 CSV of reviews] --> B[main.py]
+    A[ CSV of reviews] --> B[main.py]
     B --> C[analyzer.py<br/>1 request per review]
     C --> D{{Jev<br/>14 questions}}
     D --> C
     C -->|"per-review ratings"| E[aggregation.py]
-    E --> F[⭐ Per-topic summary]
+    E --> F[ Per-topic summary]
 ```
 
 ### Satisfaction scale
@@ -55,7 +55,7 @@ Jev can return values in between (e.g. `3.4`), which is why you'll see decimal r
 
 ---
 
-## 🗂️ Project structure
+##  Project structure
 
 ```
 .
@@ -76,7 +76,7 @@ Jev can return values in between (e.g. `3.4`), which is why you'll see decimal r
 
 ---
 
-## 🚀 Getting started
+##  Getting started
 
 ### 1. Install dependencies
 
@@ -92,7 +92,7 @@ Create a `.env` file in the project root:
 TYPESAFE_API_KEY=your_api_key_here
 ```
 
-> 🔒 `.env` is already listed in `.gitignore`, so your key won't be committed.
+>  `.env` is already listed in `.gitignore`, so your key won't be committed.
 
 ### 3. Run it
 
@@ -121,7 +121,7 @@ Battery          2.9 ★  (24 reviews)
 
 ---
 
-## 📥 Input format
+##  Input format
 
 Your CSV must contain these columns:
 
@@ -141,7 +141,7 @@ INPUT_FILE = "your_reviews.csv"
 
 ---
 
-## ⚙️ Customization
+## Customization
 
 **Change the mention threshold** (`analyzer.py`): raise it for stricter topic detection, lower it to capture weaker mentions.
 
@@ -158,13 +158,13 @@ No changes are needed in `analyzer.py` or `aggregation.py`, since they loop over
 
 ---
 
-## 🧪 About the sample data
+##  About the sample data
 
 `synthetic_phone_reviews.csv` contains **50 synthetic reviews** (flagged with `is_synthetic = true`) so you can try the pipeline right away without collecting real data.
 
 ---
 
-## 🛠️ Built with
+##  Built with
 
 - [Python](https://www.python.org/)
 - **Jev** through the **TypeSafe SDK** (`typesafe-sdk`)
