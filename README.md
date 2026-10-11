@@ -88,9 +88,6 @@ pip install python-dotenv typesafe-sdk
 
 Create a `.env` file in the project root:
 
-```env
-TYPESAFE_API_KEY=your_api_key_here
-```
 
 >  `.env` is already listed in `.gitignore`, so your key won't be committed.
 
